@@ -7,9 +7,9 @@ RUN apt-get update -qq && apt-get install -y nodejs postgresql-client imagemagic
 COPY Gemfile /projeto-rails/Gemfile
 COPY Gemfile.lock /projeto-rails/Gemfile.lock
 
-RUN docker compose run web rails assets:precompile  
-
 RUN bundle install
+
+RUN docker compose run web rails assets:precompile  
 
 
 COPY entrypoint.sh /usr/bin/
