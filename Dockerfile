@@ -9,9 +9,6 @@ COPY Gemfile.lock /projeto-rails/Gemfile.lock
 
 RUN bundle install
 
-RUN docker compose run web rails assets:precompile  
-
-
 COPY entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/entrypoint.sh
 ENTRYPOINT ["entrypoint.sh"]
